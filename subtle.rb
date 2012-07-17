@@ -221,6 +221,7 @@ gravity :top_left33,     [   0,   0,  50,  33 ]
 gravity :top,            [   0,   0, 100,  50 ]
 gravity :top66,          [   0,   0, 100,  66 ]
 gravity :top33,          [   0,   0, 100,  33 ]
+gravity :top10,		 [   0,   0, 100,  10 ]
 
 # Top right
 gravity :top_right,      [  50,   0,  50,  50 ]
@@ -252,16 +253,19 @@ gravity :right33,        [  67,   0,  33, 100 ]
 gravity :bottom_left,    [   0,  50,  50,  50 ]
 gravity :bottom_left66,  [   0,  33,  50,  67 ]
 gravity :bottom_left33,  [   0,  66,  50,  34 ]
+gravity :bottom_left90,  [   0,	 10,  50,  90 ]
 
 # Bottom
 gravity :bottom,         [   0,  50, 100,  50 ]
 gravity :bottom66,       [   0,  33, 100,  67 ]
 gravity :bottom33,       [   0,  66, 100,  34 ]
+gravity :bottom10,       [   0,  90, 100,  10 ]
 
 # Bottom right
 gravity :bottom_right,   [  50,  50,  50,  50 ]
 gravity :bottom_right66, [  50,  33,  50,  67 ]
 gravity :bottom_right33, [  50,  66,  50,  34 ]
+gravity :bottom_right90, [  50,  10,  50,  90 ]
 
 # Gimp
 gravity :gimp_image,     [  10,   0,  80, 100 ]
@@ -276,14 +280,14 @@ gravity :gimp_dock,      [  90,   0,  10, 100 ]
 # consists of a chain and an action.
 
 grab "W-q",	[ :top_left,	:top_left66,	:top_left33 ]
-grab "W-w",	[ :top,		:top66,		:top33	]
+grab "W-w",	[ :top,		:top66,		:top33,       :top10 ]
 grab "W-e", 	[ :top_right,	:top_right66,	:top_right33 ]
 grab "W-a",	[ :left,	:left66,	:left33,    :leftmid ]
 grab "W-s",	[ :center,	:center66,	:center33 ]
 grab "W-d",	[ :right,	:right66,	:right33,   :rightmid ]
-grab "W-z",	[ :bottom_left,	:bottom_left66,	:bottom_left33 ]
-grab "W-x",	[ :bottom,	:bottom66,	:bottom33 ]
-grab "W-c",	[ :bottom_right,:bottom_right66,:bottom_right33 ]
+grab "W-z",	[ :bottom_left,	:bottom_left66,	:bottom_left33, :bottom_left90 ]
+grab "W-x",	[ :bottom,	:bottom66,	:bottom33,    :bottom10 ]
+grab "W-c",	[ :bottom_right,:bottom_right66,:bottom_right33, :bottom_right90 ]
 
 # === Finding keys
 #
