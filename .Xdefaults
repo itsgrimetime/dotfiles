@@ -2,8 +2,7 @@
 
 URxvt.transparent: True
 URxvt.fading: 45
-URxvt.tintColor: Black 
-URxvt.shading: 18
+URxvt.shading: 10
 URxvt.externalBorder: 0
 URxvt.internalBorder: 0
 URxvt*geometry:                53x20
@@ -16,8 +15,8 @@ URxvt*borderless: 1
 URxvt*scrollBar:            false
 URxvt*saveLines:  5000
 URxvt*termName:    rxvt-unicode
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: firefox
+URxvt*perl-ext-common: default,matcher
+URxvt*urlLauncher: chromium
 URxvt.matcher.button: 1
 
 !Pnevma1
