@@ -134,12 +134,13 @@ style :all do
   border      "#CCCCCC", 0
   padding     2, 10
   #font        "-*-*-*-*-*-*-14-*-*-*-*-*-*-*"
-  font        "xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true"
+  font        "xft:ProFont:bold:pixelsize=15:antialias=true:hinting=true"
 end
 
 # Style for the all views
 style :views do
   foreground  "#757575"
+  font        "xfg:DejaVu Sans Mono:Bold:pixelsize=12:antialias=true:hinting=true"
 
   # Style for the active views
   style :focus do
