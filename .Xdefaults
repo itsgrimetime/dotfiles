@@ -6,7 +6,7 @@ URxvt.shading: 10
 URxvt.externalBorder: 0
 URxvt.internalBorder: 0
 URxvt*geometry:                53x20
-URxvt*font: xft:ProFont:pixelsize=13:antialias=true:hinting=true
+URxvt*font: xft:ProFont:pixelsize=14.5:antialias=true:hinting=true
 URxvt*boldFont: xft:ProFont:bold:pixelsize=12:antialias=true:hinting=true
 URxvt*depth:                60
 URxvt*background:            [85]#000000
