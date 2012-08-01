@@ -7,8 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="kardan"
 
-CORRECT_IGNORE=".*"
-
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -33,13 +31,18 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(rails git ruby nyan)
 
-alias skype='(LD_PRELOAD=/usr/libxx/libv4l/v4l1compat.so skype &)'
-alias subl='(/home/mike/apps/sublime_text_2/sublime_text &)'
-alias chrome='(/usr/bin/chromium &)'
+alias skype='(LD_PRELOAD=/usr/libxx/libv4l/v4l1compat.so skype &) &> /home/mike/logs/skype.log'
+alias subl='(/home/mike/apps/sublime_text_2/sublime_text &) &> /home/mike/logs/sublime_text.log'
+alias chrome='(/usr/bin/chromium &) &> /home/mike/logs/chrome.log'
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+unsetopt nomatch
+unsetopt correct_all
+
 bindkey "^[[7~" beginning-of-line
 bindkey "^[[8~" end-of-line
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
