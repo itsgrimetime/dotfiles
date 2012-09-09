@@ -4,10 +4,6 @@ function get_host {
 	echo '@'`hostname`''
 }
 
-function get_user {
-  echo ''$USER''
-}
-
 PROMPT="%{$fg[yellow]%}Ξ%{$reset_color%} "
 RPROMPT='%~$(git_prompt_info)%{$fg[blue]%}$(get_host)%{$reset_color%}'
 
