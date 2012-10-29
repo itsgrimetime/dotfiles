@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-#
+
 # Author::  Christoph Kappel <unexist@subforge.org>
 # Version:: $Id: data/subtle.rb,v 3182 2012/02/04 16:39:33 unexist $
 # License:: GNU GPLv2
@@ -364,12 +364,14 @@ grab "W-S-1", :ViewJump1
 grab "W-S-2", :ViewJump2
 grab "W-S-3", :ViewJump3
 grab "W-S-4", :ViewJump4
+grab "W-S-5", :ViewJump5
 
 # Switch current view
 grab "W-1", :ViewSwitch1
 grab "W-2", :ViewSwitch2
 grab "W-3", :ViewSwitch3
 grab "W-4", :ViewSwitch4
+grab "W-5", :ViewSwitch5
 
 # Select next and prev view */
 grab "KP_Add",      :ViewNext
@@ -380,6 +382,7 @@ grab "W-A-1", :ScreenJump1
 grab "W-A-2", :ScreenJump2
 grab "W-A-3", :ScreenJump3
 grab "W-A-4", :ScreenJump4
+grab "W-A-5", :ScreenJump5
 
 # Force reload of config and sublets
 grab "W-C-r", :SubtleReload
@@ -627,9 +630,10 @@ end
 
 # Simple tags
 tag "terms", "xterm|[u]?rxvt"
-tag "browser", "chromium|uzbl|opera|firefox|navigator"
-tag "editor", "sublime_text"
+tag "browser", "chromium|uzbl|opera|firefox|navigator|exe|flash"
+tag "editor", "sublime_text|eclipse"
 tag "skype", "skype"
+tag "vms", "VirtualBox"
 
 # Placement
 tag "editor" do
@@ -748,7 +752,7 @@ view "α",   "terms|default"
 view "β",   "browser"
 view "γ",   "editor"
 view "δ",   "skype"
-
+view "ε",   "vms"
 #
 # == Sublets
 #
@@ -790,10 +794,13 @@ view "δ",   "skype"
     format_string "%D - %I:%M%p"
   end
 
+  sublet :cpu do
+    interval 5
+  end
 #  sublet :wifi do
 #    interval    10
 #    foreground  "#eeeeee"
-#    background  "#eeeeee"
+#    background  "#000000"
 #    device      wlan0 
 #  end
 #

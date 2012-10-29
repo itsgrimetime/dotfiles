@@ -36,6 +36,7 @@ plugins=(rails git ruby nyan)
 alias skype='(LD_PRELOAD=/usr/libxx/libv4l/v4l1compat.so skype &) &> /home/mike/logs/skype.log'
 alias subl='(/home/mike/apps/sublime_text_2/sublime_text &) &> /home/mike/logs/sublime_text.log'
 alias chrome='(/usr/bin/chromium --enable-logging --v=1 &) &> /home/mike/logs/chrome.log'
+alias eclipse='(/usr/bin/eclipse &) &> /home/mike/logs/eclipse.log'
 alias nite='sudo pm-suspend'
 
 source $ZSH/oh-my-zsh.sh
