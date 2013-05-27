@@ -13,50 +13,13 @@ from subprocess import call, check_output
 import os.path
 import string
 import filecmp
-from github3 import authorize, login
-from getpass import getuser, getpass
 import sys
 
 # for some reason I can't import github3 just after installing it, so we add
 # it to the system path
 sys.path.append("/usr/local/lib/python2.7/site-packages")
 
-user = "magrimes" # your github username here, otherwise it will prompt
-repo = "dotfiles" # name of github repo with your dotfiles in it
-
-while not user:
-    user = raw_input("Github username: ")
-
-CREDENTIALS_FILE = user + ".updot"
-
-if os.path.isfile(CREDENTIALS_FILE): # user has authenticated with github before
-    with open(CREDENTIALS_FILE, "r") as fd:
-        token = fd.readline().strip()
-        github_id = fd.readline().strip()
-    gh = login(token=token)
-
-else:   # user hasn't, so we ask for password
-
-    password = ""
-    while not password:
-        password = getpass("Password for {0}: ".format(user))
-
-    scopes = ["user", "repo"]
-
-    note = "updot.py, a script that utilizes github3.py"
-
-    gh = login(user, password)
-    auth = authorize(user, password, scopes, note, None)
-
-    with open(CREDENTIALS_FILE, "w") as fd:
-        fd.write(auth.token + "\n")
-        fd.write(str(auth.id))
-
-# we are now logged in
-
-dotfiles_repo = gh.repository(user, repo)
-
-manifest = open('dotfiles.manifest', 'r');
+manifest = open("dotfiles.manifest", "r");
 
 # copy each file to dotfiles
 total_files = 0;
