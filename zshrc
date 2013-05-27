@@ -36,7 +36,9 @@ plugins=(git nyan)
 # Aliases
 alias l='ls -l'
 # -r is recusive, -I ignores binaries, and we don't want to look in .svn
+# probably going to just use "ack" from now on.
 alias rg='grep -rI --exclude-dir="\.svn"'
+alias updot='~/code/python/updot/updot.py'
 
 source $ZSH/oh-my-zsh.sh
 
