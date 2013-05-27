@@ -31,13 +31,12 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails git ruby nyan)
+plugins=(git nyan)
 
-alias skype='(LD_PRELOAD=/usr/libxx/libv4l/v4l1compat.so skype &) &> /home/mike/logs/skype.log'
-alias subl='(/home/mike/apps/sublime_text_2/sublime_text &) &> /home/mike/logs/sublime_text.log'
-alias chrome='(/usr/bin/chromium --enable-logging --v=1 &) &> /home/mike/logs/chrome.log'
-alias eclipse='(/usr/bin/eclipse &) &> /home/mike/logs/eclipse.log'
-alias nite='sudo pm-suspend'
+# Aliases
+alias l='ls -l'
+# -r is recusive, -I ignores binaries, and we don't want to look in .svn
+alias rg='grep -rI --exclude-dir="\.svn"'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,9 +44,7 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt nomatch
 unsetopt correct_all
+unsetopt beep
 
-bindkey "^[[7~" beginning-of-line
-bindkey "^[[8~" end-of-line
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
+export SVN_EDITOR=vim
+PATH=/Users/mgrimes/pear/bin:$PATH

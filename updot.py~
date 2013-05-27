@@ -93,9 +93,12 @@ for path in manifest:
         print "%s is not an existing file or directory" % fullpath
         ", skipping."
 
-call(["git", "add", "."])
-call(["git", "commit", "-m", "updot.py update"])
-call(["git", "push"])
+tree_sha = string.strip(check_output(["git", "write-tree"]))
+
+print "Tree SHA: " + tree_sha
+
+repo_message = "updot.py dotfiles update"
+commit = dotfiles_repo.create_commit(repo_message, tree_sha, [])
 
 print "Files updated: %d / %d (%d invalid)" % (updated_files, total_files, \
                 invalid_files)

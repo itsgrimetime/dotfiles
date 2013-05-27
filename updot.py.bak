@@ -9,17 +9,21 @@
 
 # open manifest file
 
-from subprocess import call, check_output
+from subprocess import call
 import os.path
 import string
 import filecmp
-from github3 import authorize, login
+from github3 import authorize
 from getpass import getuser, getpass
 import sys
 
 # for some reason I can't import github3 just after installing it, so we add
 # it to the system path
 sys.path.append("/usr/local/lib/python2.7/site-packages")
+
+from github3 import authorize, login
+from getpass import getuser, getpass
+import os.path
 
 user = "magrimes" # your github username here, otherwise it will prompt
 repo = "dotfiles" # name of github repo with your dotfiles in it
@@ -79,23 +83,19 @@ for path in manifest:
             if filecmp.cmp(fullpath, filename):
                 # files are same, no need to update
                 print "%s is up to date, skipping. " + \
-                    os.path.basename(filename)
-            else:
+		    os.path.basename(filename)
+	    else:
                 # print "COPY %s" % os.path.basename(filename)
                 # files are different, update
                 call(["cp", "-v", fullpath, filename])
-        else:
+	else:
             # file is not in directory, we'll copy it and commit it
             new_files += 1
     else:
-        total_files -= 1
-        invalid_files += 1
+	total_files -= 1
+	invalid_files += 1
         print "%s is not an existing file or directory" % fullpath
         ", skipping."
 
-call(["git", "add", "."])
-call(["git", "commit", "-m", "updot.py update"])
-call(["git", "push"])
-
 print "Files updated: %d / %d (%d invalid)" % (updated_files, total_files, \
-                invalid_files)
+		invalid_files) 
