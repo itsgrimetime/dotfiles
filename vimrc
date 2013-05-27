@@ -1,6 +1,7 @@
 syntax on
 filetype plugin indent on
 
+set autoread
 set history=1000
 set smartindent
 set softtabstop=4
