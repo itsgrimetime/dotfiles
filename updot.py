@@ -78,12 +78,13 @@ for path in manifest:
         # we first check if there are any changes to the file
             if filecmp.cmp(fullpath, filename):
                 # files are same, no need to update
-                print "%s is up to date, skipping. " + \
-                    os.path.basename(filename)
+                print "%s is up to date, skipping. " \
+                    % os.path.basename(filename)
             else:
                 # print "COPY %s" % os.path.basename(filename)
                 # files are different, update
                 call(["cp", "-v", fullpath, filename])
+		call(["git", "add", filename])
         else:
             # file is not in directory, we'll copy it and commit it
             new_files += 1
@@ -93,7 +94,7 @@ for path in manifest:
         print "%s is not an existing file or directory" % fullpath
         ", skipping."
 
-call(["git", "add", "."])
+call(["git", "add", "dotfiles.manifest"])
 call(["git", "commit", "-m", "updot.py update"])
 call(["git", "push"])
 
