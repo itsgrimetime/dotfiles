@@ -3,11 +3,16 @@ filetype plugin indent on
 
 set autoread
 set history=1000
+
+" Indentation
+set autoindent
 set smartindent
 set softtabstop=4
-"set tabstop=4
-"set shiftwidth=4
-"set expandtab
+set tabstop=8
+set shiftwidth=4
+" set expandtab
+
+" Other things
 set number
 set backup
 set ruler
