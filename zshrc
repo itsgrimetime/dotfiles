@@ -51,3 +51,4 @@ unsetopt beep
 
 export SVN_EDITOR=vim
 PATH=/Users/mgrimes/pear/bin:$PATH
+fpath=(/Users/mgrimes/.zsh-completions/src $fpath)
