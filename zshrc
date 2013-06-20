@@ -45,6 +45,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+setopt histverify
+setopt listpacked
+
 unsetopt nomatch
 unsetopt correct_all
 unsetopt beep
