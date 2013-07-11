@@ -40,6 +40,7 @@ alias l='ls -l'
 alias rg='grep -rI --exclude-dir="\.svn"'
 alias updot='~/code/python/updot/updot.py'
 alias sshmtu='ssh magrimes@wopr.csl.mtu.edu'
+alias dv='dirs -v'
 
 source $ZSH/oh-my-zsh.sh
 
