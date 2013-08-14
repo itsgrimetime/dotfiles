@@ -34,7 +34,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git nyan)
 
 # Aliases
-alias l='ls -l'
+alias l='ls -alp'
 # -r is recusive, -I ignores binaries, and we don't want to look in .svn
 # probably going to just use "ack" from now on.
 alias rg='grep -rI --exclude-dir="\.svn"'
