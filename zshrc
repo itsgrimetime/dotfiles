@@ -41,6 +41,7 @@ alias rg='grep -rI --exclude-dir="\.svn"'
 alias updot='~/code/python/updot/updot.py'
 alias sshmtu='ssh magrimes@wopr.csl.mtu.edu'
 alias dv='dirs -v'
+alias ftb='/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -jar ~/Downloads/FTB_Launcher.jar'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,3 +57,6 @@ unsetopt beep
 export SVN_EDITOR=vim
 PATH=/Users/mgrimes/pear/bin:$PATH
 fpath=(/Users/mgrimes/.zsh-completions/src $fpath)
+
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
