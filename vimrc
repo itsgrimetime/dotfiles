@@ -1,5 +1,6 @@
 set autoread
 set history=1000
+set undofile
 syntax on
 
 " Indentation
