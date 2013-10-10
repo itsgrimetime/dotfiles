@@ -58,6 +58,7 @@ if !exists(":DiffOrig")
 endif
 
 autocmd FileType text setlocal textwidth=80
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 highlight BadWhitespace ctermbg=red guibg=red
 match BadWhitespace /\s\+$\| \+\ze\t/
