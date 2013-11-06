@@ -61,3 +61,5 @@ fpath=(/Users/mgrimes/.zsh-completions/src $fpath)
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:"/Applications/Postgres.app/Contents/MacOS/bin"
+
+eval "$(rbenv init -)"
