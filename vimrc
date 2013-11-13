@@ -24,7 +24,7 @@ set ttyfast
 " set cursorline
 
 set formatoptions+=w
-set tw=80
+set tw=120
 
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
