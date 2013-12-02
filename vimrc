@@ -2,6 +2,14 @@ set autoread
 set history=1000
 set undofile
 syntax on
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'bling/vim-airline'
+
 
 " Indentation
 set autoindent
@@ -49,6 +57,8 @@ if has("autocmd")
 		\ endif
 endif
 
+set t_Co=256
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
@@ -66,17 +76,4 @@ match BadWhitespace /\s\+$\| \+\ze\t/
 :map :wj :w <Enter> :! spcp -d spmschunder2 % <Enter> <Enter>
 :map :diffo :DiffOrig
 
-" a friendly, useful, and descriptive status line
-set statusline=%t       "tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=%y      "filetype
-set statusline+=%=      "left/right separator
-set statusline+=%c:%v,     "cursor column (actual,virtual - great with tabs)
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
-
-
+let g:airline_theme='simple'
